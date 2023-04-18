@@ -1,0 +1,9 @@
+[Unit]
+Description=OnePlus 3/3T adaptation service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/oneplus-oneplus3-adaptation
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=OnePlus 3/3T dashd service
+After=android-mount.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'cp /usr/lib/oneplus3-adaptation/dashd /var/lib/lxc/android/rootfs/sbin/dashd'
+
+[Install]
+WantedBy=multi-user.target
