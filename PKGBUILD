@@ -27,6 +27,7 @@ package() {
     install -Dm644 "${srcdir}/$pkgname/$pkgname.service" -t "${pkgdir}/usr/lib/systemd/system/"
     install -Dm644 "${srcdir}/$pkgname/oneplus3-dashd.service" -t "${pkgdir}/usr/lib/systemd/system/"
     install -Dm644 "${srcdir}/$pkgname/vendor-overlay.service" -t "${pkgdir}/usr/lib/systemd/system/"
+    install -Dm644 "${srcdir}/$pkgname/oneplus3-wifi-fix.service" -t "${pkgdir}/usr/lib/systemd/system/"
 
     mkdir -p "${pkgdir}/usr/lib/droid-vendor-overlay"
     cp -r "${srcdir}/$pkgname/droid-vendor-overlay" "${pkgdir}/usr/lib/droid-vendor-overlay/"
