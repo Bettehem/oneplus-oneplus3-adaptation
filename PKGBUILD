@@ -47,7 +47,7 @@ package() {
     install -Dm644 "${srcdir}/$pkgname/override.conf" -t "${pkgdir}/etc/systemd/system/bluebinder.service.d/"
 
     mkdir -p "${pkgdir}/boot/"
-    install -Dm644 "${srcdir}/$pkgname/halium-boot.img" -t "${pkgdir}/boot/boot.img"
+    install -Dm644 "${srcdir}/$pkgname/halium-boot.img" -T "${pkgdir}/boot/boot.img"
 
     mkdir -p "${pkgdir}/usr/share/glib-2.0/schemas/"
     install -Dm644 "${srcdir}/$pkgname/90_manjaro.gschema.override" -t "${pkgdir}/usr/share/glib-2.0/schemas/"
