@@ -29,7 +29,7 @@ package() {
     install -Dm644 "${srcdir}/$pkgname/vendor-overlay.service" -t "${pkgdir}/usr/lib/systemd/system/"
 
     mkdir -p "${pkgdir}/usr/lib/droid-vendor-overlay"
-    cp -r "${srcdir}/$pkgname/droid-vendor-overlay ${pkgdir}/usr/lib/droid-vendor-overlay/"
+    cp -r "${srcdir}/$pkgname/droid-vendor-overlay" "${pkgdir}/usr/lib/droid-vendor-overlay/"
 
     mkdir -p "${pkgdir}/usr/lib/sysusers.d/"
     install -Dm644 "${srcdir}/$pkgname/android.conf" -t "${pkgdir}/usr/lib/sysusers.d/"
