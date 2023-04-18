@@ -39,7 +39,7 @@ package() {
 
     mkdir -p "${pkgdir}/etc/udev/rules.d/"
     # Create rules file for the device
-    cat /var/lib/lxc/android/rootfs/ueventd*.rc /vendor/ueventd*.rc | grep ^/dev | sed -e 's/^\/dev\///' | awk '{printf "ACTION==\"add\", KERNEL==\"%s\", OWNER=\"%s\", GROUP=\"%s\", MODE=\"%s\"\n",$1,$3,$4,$2}' | sed -e 's/\r//' > ${srcdir}/70-$_codename.rules
+    cat /var/lib/lxc/android/rootfs/ueventd*.rc /vendor/ueventd*.rc | grep ^/dev | sed -e 's/^\/dev\///' | awk '{printf "ACTION==\"add\", KERNEL==\"%s\", OWNER=\"%s\", GROUP=\"%s\", MODE=\"%s\"\n",$1,$3,$4,$2}' | sed -e 's/\r//' > ${srcdir}/$pkgname/70-$_codename.rules
     install -Dm644 "${srcdir}/$pkgname/70-oneplus3.rules" -t "${pkgdir}/etc/udev/rules.d/"
     install -Dm644 "${srcdir}/$pkgname/90-backlight.rules" -t "${pkgdir}/etc/udev/rules.d/"
 
@@ -53,5 +53,5 @@ package() {
     install -Dm644 "${srcdir}/$pkgname/90_manjaro.gschema.override" -t "${pkgdir}/usr/share/glib-2.0/schemas/"
 
     mkdir -p "${pkgdir}/usr/lib/oneplus3-adaptation"
-    install -Dm755 "${srcdir}/dashd" -t "${pkgdir}/usr/lib/oneplus3-adaptation/"
+    install -Dm755 "${srcdir}/$pkgname/dashd" -t "${pkgdir}/usr/lib/oneplus3-adaptation/"
 }
