@@ -26,11 +26,9 @@ package() {
     mkdir -p "${pkgdir}/usr/lib/systemd/system/"
     install -Dm644 "${srcdir}/$pkgname/$pkgname.service" -t "${pkgdir}/usr/lib/systemd/system/"
     install -Dm644 "${srcdir}/$pkgname/oneplus3-dashd.service" -t "${pkgdir}/usr/lib/systemd/system/"
-    install -Dm644 "${srcdir}/$pkgname/vendor-overlay.service" -t "${pkgdir}/usr/lib/systemd/system/"
     install -Dm644 "${srcdir}/$pkgname/oneplus3-wifi-fix.service" -t "${pkgdir}/usr/lib/systemd/system/"
 
-    mkdir -p "${pkgdir}/usr/lib/droid-vendor-overlay"
-    cp -r "${srcdir}/$pkgname/droid-vendor-overlay" "${pkgdir}/usr/lib/droid-vendor-overlay/"
+    cp -r "${srcdir}/$pkgname/droid-vendor-overlay" "${pkgdir}/usr/lib/droid-vendor-overlay"
 
     mkdir -p "${pkgdir}/usr/lib/sysusers.d/"
     install -Dm644 "${srcdir}/$pkgname/android.conf" -t "${pkgdir}/usr/lib/sysusers.d/"
@@ -53,6 +51,6 @@ package() {
     mkdir -p "${pkgdir}/usr/share/glib-2.0/schemas/"
     install -Dm644 "${srcdir}/$pkgname/90_manjaro.gschema.override" -t "${pkgdir}/usr/share/glib-2.0/schemas/"
 
-    mkdir -p "${pkgdir}/usr/lib/oneplus3-adaptation"
-    install -Dm755 "${srcdir}/$pkgname/dashd" -t "${pkgdir}/usr/lib/oneplus3-adaptation/"
+    mkdir -p "${pkgdir}/usr/lib/oneplus3-adaptation/vendor-sbin"
+    install -Dm755 "${srcdir}/$pkgname/dashd" -t "${pkgdir}/usr/lib/oneplus3-adaptation/vendor-sbin/"
 }
